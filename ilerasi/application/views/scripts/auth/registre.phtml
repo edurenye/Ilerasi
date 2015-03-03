@@ -1,0 +1,141 @@
+<h2>Registra't</h2>
+<form id="signupForm" method="POST" action="/auth/registre">
+    <table class="table" style="border:0; margin:auto;">
+        <tbody>
+            <tr>
+                <td>
+                    <b>Nom Usuari: </b>
+                </td>
+                <td>
+                    <input id="username" type="text" name="user" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Contrasenya: </b>
+                </td>
+                <td>
+                    <input type="password" name="password" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Repeteix la contrasenya: </b>
+                </td>
+                <td>
+                    <input type="password" name="repassword" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Correu Electrònic: </b>
+                </td>
+                <td>
+                    <input type="email" name="email" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Nom: </b>
+                </td>
+                <td>
+                    <input id="firstname" type="text"  name="nom" required /><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Cognoms: </b>
+                </td>
+                <td>
+                    <input id="lastname" type="text" name="cognoms" required /><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>DNI: </b>
+                </td>
+                <td>
+                    <input type="text" name="dni" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Telèfon: </b>
+                </td>
+                <td>
+                    <input type="tel" name="tel" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>País: </b>
+                </td>
+                <td>
+                    <input type="text" name="pais" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Ciutat: </b>
+                </td>
+                <td>
+                    <input type="text" name="ciutat" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="btn" type="submit" value="Submit" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+<script type="text/javascript">
+    $("#signupForm").validate({
+        rules: {
+            firstname: "required",
+            lastname: "required",
+            username: {
+                required: true,
+                minlength: 2
+            },
+            password: {
+                required: true,
+                minlength: 5
+            },
+            confirm_password: {
+                required: true,
+                minlength: 5,
+                equalTo: "#password"
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            topic: {
+                required: "#newsletter:checked",
+                minlength: 2
+            },
+            agree: "required"
+        },
+        messages: {
+            firstname: "Please enter your firstname",
+            lastname: "Please enter your lastname",
+            username: {
+                required: "Please enter a username",
+                minlength: "Your username must consist of at least 2 characters"
+            },
+            password: {
+                required: "Please provide a password",
+                minlength: "Your password must be at least 5 characters long"
+            },
+            confirm_password: {
+                required: "Please provide a password",
+                minlength: "Your password must be at least 5 characters long",
+                equalTo: "Please enter the same password as above"
+            },
+            email: "Please enter a valid email address",
+            agree: "Please accept our policy"
+        }
+    });
+</script>

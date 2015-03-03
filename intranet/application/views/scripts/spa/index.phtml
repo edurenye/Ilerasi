@@ -1,0 +1,39 @@
+<div class="row-fluid">
+    <div class="span4"></div>
+    <div class="span4">
+        <center><h2>SPA</h2></center>
+        <form action="/spa/add" class="form" method="POST">
+            <table class="table" style="border:0; margin:auto;">
+                <tr>
+                    <div class="form-item">
+                        <td>
+                            <span>Número de reserva: </span>
+                        </td>
+                        <td>
+                            <input type="number" maxlength="20" name="id_reserva" id="nom" class="form-text required" required />
+                        </td>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="form-item">
+                        <td>
+                            <span>Durada (min): </span>
+                        </td>
+                        <td>
+                            <input type="number" maxlength="20" name="durada" min="20" max="60" id="nom" class="form-text required" required />
+                        </td>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="form-item">
+                        <td></td>
+                        <td>
+                            <button type="submit" class="btn submit">Check-in</button>
+                        </td>
+                    </div>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="span4"></div>
+</div>

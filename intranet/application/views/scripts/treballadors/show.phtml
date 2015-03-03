@@ -1,0 +1,96 @@
+<?php
+    $dni = $this->dni;
+    $nom = $this->nom;
+    $cognoms = $this->cognoms;
+    $salari = $this->salari;
+    $tipus = $this->tipus;
+    $complement = $this->complement;
+    $indefinit = $this->indefinit;
+    $data_inici = $this->data_inici;
+    $data_fi = $this->data_fi;
+    $antiguitat = $this->antiguitat;
+    $total_ant = $this->total_ant;
+    $total = $this->total;
+?>
+<div class="row-fluid">
+    <div class="span4"></div>
+    <div class="span4">
+        <center><h2>Treballador</h2></center>
+        <table class="table" style="border:0; margin:auto;">
+            <tr>
+                <td>
+                    <span>DNI: </span>
+                </td>
+                <td>
+                    <span><?php echo $dni; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Nom: </span>
+                </td>
+                <td>
+                    <span><?php echo $nom; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Cognoms: </span>
+                </td>
+                <td>
+                    <span><?php echo $cognoms; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Salari base de <?php echo $tipus; ?>: </span>
+                </td>
+                <td>
+                    <span><?php echo $salari; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Complement de productivitat: </span>
+                </td>
+                <td>
+                    <span><?php echo $complement; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Contracte: </span>
+                </td>
+                <td>
+                    <span>
+                        <?php
+                            if ($indefinit==1) {
+                                echo "Contracte indefinit amb inici: $data_inici";
+                            }
+                            else {
+                                echo "Inici: $data_inici<br/>Fi: $data_fi";
+                            }
+                        ?>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Complement antiguitat: </span>
+                </td>
+                <td>
+                    <span><?php echo $total_ant; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>TOTAL PERCEPCIONS: </span>
+                </td>
+                <td>
+                    <span><?php echo $total; ?></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="span4"></div>
+</div>

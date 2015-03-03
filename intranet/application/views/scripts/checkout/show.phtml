@@ -1,0 +1,94 @@
+<?php
+    $id_reserva = $this->id_reserva;
+    $dni = $this->dni;
+    $nom = $this->nom;
+    $cognoms = $this->cognoms;
+    $preu_res = $this->preu_res;
+    $spa = $this->spa;
+    $restaurant = $this->con_men;
+    $minibar = $this->usa_pro;
+    $massatge = $this->mas;
+    $total = 0;
+?>
+<div class="row-fluid">
+    <div class="span4"></div>
+    <div class="span4">
+        <center><h2>Factura</h2></center>
+        <table class="table" style="border:0; margin:auto;">
+            <tr>
+                <td>
+                    <span>Número de reserva: </span>
+                </td>
+                <td>
+                    <span><?php echo $id_reserva; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>DNI: </span>
+                </td>
+                <td>
+                    <span><?php echo $dni; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Nom: </span>
+                </td>
+                <td>
+                    <span><?php echo $nom; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Cognoms: </span>
+                </td>
+                <td>
+                    <span><?php echo $cognoms; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Preu de la reserva: </span>
+                </td>
+                <td>
+                    <span><?php echo $preu_res; $total = $total + $preu_res; ?></span>
+                </td>
+            </tr>
+            <?php
+                foreach ($spa as $valor_spa) {
+                    echo "<tr><td>SPA ($valor_spa->data): </td><td>$valor_spa->preu</td></tr>";
+                    $total = $total + $valor_spa->preu;
+                }
+            ?>
+            <?php
+                foreach ($restaurant as $valor_res) {
+                    echo "<tr><td>Restaurant ($valor_res->aliment, $valor_res->data): </td><td>$valor_res->preu</td></tr>";
+                    $total = $total + $valor_res->preu;
+                }
+            ?>
+            <?php
+                foreach ($minibar as $valor_min) {
+                    $preu_min = $valor_min->preu * $valor_min->quantitat;
+                    echo "<tr><td>Minibar ($valor_min->aliment, $valor_min->quantitat): </td><td>$preu_min</td></tr>";
+                    $total = $total + $preu_min;
+                }
+            ?>
+            <?php
+                foreach ($massatge as $valor_mas) {
+                    echo "<tr><td>Massatges ($valor_mas->tipus, $valor_mas->data): </td><td>$valor_mas->preu</td></tr>";
+                    $total = $total + $valor_mas->preu;
+                }
+            ?>
+            <tr>
+                <td>
+                    <span>Total: </span>
+                </td>
+                <td>
+                    <span><?php echo $total; ?></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="span4"></div>
+</div>

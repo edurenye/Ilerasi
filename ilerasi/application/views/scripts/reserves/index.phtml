@@ -1,0 +1,48 @@
+<div class="row-fluid">
+    <div class="span4"></div>
+    <div class="span4">
+        <table class="table" style="border:0; margin:auto;">
+            <tbody>
+                <tr>
+                    <td>Data Arribada: </td>
+                    <td><?php echo $_SESSION['disp']['arribada']; ?></td>
+                </tr>
+                <tr>
+                    <td>Data Sortida: </td>
+                    <td><?php echo $_SESSION['disp']['sortida']; ?></td>
+                </tr>
+                <tr>
+                    <td>Nombre d'adults: </td>
+                    <td><?php echo $_SESSION['disp']['adults']; ?></td>
+                </tr>
+                <tr>
+                    <td>Nombre de nens: </td>
+                    <td><?php echo $_SESSION['disp']['nens']; ?></td>
+                </tr>
+                <tr>
+                    <td>Nombre d'habitacions: </td>
+                    <td><?php echo $_SESSION['disp']['habitacio']; ?>
+                </tr>
+                <?php
+                    $lliure = $_SESSION['disp']['lliure'];
+                    foreach ($lliure as $valor_hab_lli) {
+                        echo "<tr><td>Habitacio nº: </td><td>$valor_hab_lli</td></tr>";
+                    }
+                ?>
+                <tr>
+                    <td>Preu: </td>
+                    <td><?php echo $_SESSION['disp']['preu']; ?> €</td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/reserves/confirm"><button class="btn">Confirma</button></a>
+                    </td>
+                    <td>
+                        <a href="/reserves/cancel"><button class="btn">Cancela</button></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="span4"></div>
+</div>

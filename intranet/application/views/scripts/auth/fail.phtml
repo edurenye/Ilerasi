@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<?php $namespace = new Zend_Session_Namespace ('user'); ?>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<title>Hotel Ilerasi</title>
+<meta name="description" content="L'hotel Ilerasi és un hotel situat a Andorra amb proximitat a les pistes d'esqui de Vallnord" />
+<meta name="keywords" content="hotel, ilerasi, andorra, vallnord, esqui, snow" />
+<meta name="author" content="Eduard Reñé Claramunt" />
+<!—[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]—>
+<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body { padding-top: 60px; }
+</style>
+<link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="row-fluid">
+<div class="span4"></div>
+<div class="span4">
+    <?php echo "<script type='text/javascript'> $(document).ready(function() { document.error-user.edit-user.value = $user; });</script>"; ?>
+    <div class="alert alert-error">
+        <a class="close" data-dismiss="alert">x</a>
+        Autenticació incorrecta
+    </div>
+    <?php echo $this->render('auth/signin.phtml'); ?>
+</div>
+<div class="span4"></div>
+</div>
+
+<footer>
+    <p style="text-align:center; padding-bottom:20px; padding-top:20px;">&copy; Ilerasi 2012</p>
+</footer>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.boto').css('display','none');
+    $('.canvi').click(function() {
+        element = $(this).attr('data-target');
+        $(element).removeClass('boto');
+        $('.boto').hide();
+        $(element).slideToggle();
+        $(element).addClass('boto');
+    });
+});
+</script>
+
+<script type="text/javascript">
+    var datefield=document.createElement("input")
+    datefield.setAttribute("type", "date")
+    if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
+        document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n')
+    }
+</script>
+
+<script>
+if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
+    jQuery(function($){ //on document.ready
+        $('#calendari').datepicker();
+    })
+}
+</script>
+
+</body>
+</html>

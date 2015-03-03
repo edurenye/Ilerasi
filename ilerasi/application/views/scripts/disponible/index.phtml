@@ -1,0 +1,52 @@
+<h3>DISPONIBILITAT - RESERVES</h3>
+<form method="POST" action="/disponible/index">
+    <table class="table" style="border:0; margin:auto;">
+        <tbody>
+            <tr>
+                <td>
+                    <b>Arribada:</b>
+                </td>
+                <td>
+                    <input type="date" id="calendari_a" name="arribada" min="<?php echo date('Y-m-d'); ?>" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Sortida:</b>
+                </td>
+                <td>
+                    <input type="date" id="calendari_s" name="sortida"  min="<?php echo date('Y-m') . '-' . (date('d')+1); ?>" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Adults:</b>
+                </td>
+                <td>
+                    <input type="number" id="numero_a" name="adults" min="1" value="1" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Nens:</b>
+                </td>
+                <td>
+                    <input type="number" id="numero_n" name="nens" min="0" value="0" required /><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Habitacions:</b>
+                </td>
+                <td>
+                    <input type="number" id="numero_h" name="habitacio" min="1" max="32" value="1" required /><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="btn" type="submit" value="Submit" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>

@@ -1,0 +1,38 @@
+<center><h2>Inicia Sessi&oacute;</h2></center>
+<form action="/auth/login" class="form" method="POST">
+    <table class="table" style="border:0; margin:auto;">
+        <tr>
+            <div class="form-item">
+                <td>
+                    <span>Usuari: </span>
+                </td>
+                <td>
+                    <input type="text" maxlength="20" name="user" id="edit-user" value="" autocomplete="on" class="form-text required" required />
+                </td>
+            </div>
+        </tr>
+        <tr>
+            <div class="form-item">
+                <td>
+                    <span>Contrasenya: </span>
+                </td>
+                <td>
+                    <input type="password" maxlength="20" name="password" id="edit-password" autocomplete="on" class="form-text required" required />
+                </td>
+            </div>
+        </tr>
+        <tr>
+            <div class="form-item">
+                <td>
+                    <label class="checkbox">
+                        <input type="checkbox" value="1" name="remember_me">
+                        <span>Recorda les meves dades</span>
+                    </label>
+                </td>
+                <td>
+                    <button type="submit" class="btn submit">Inicia sessi&oacute;</button>
+                </td>
+            </div>
+        </tr>
+    </table>
+</form>

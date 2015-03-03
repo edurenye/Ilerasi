@@ -1,0 +1,97 @@
+<?php
+    $dni = $this->dni;
+    $nom = $this->nom;
+    $cognoms = $this->cognoms;
+    $id_reserva = $this->id_reserva;
+    $num_adults = $this->num_adults;
+    $num_nens = $this->num_nens;
+    $num_habitacions = $this->num_habitacions;
+    $hab = $this->hab;
+    $data_entrada = $this->data_entrada;
+    $data_sortida = $this->data_sortida;
+?>
+<div class="row-fluid">
+    <div class="span4"></div>
+    <div class="span4">
+        <center><h2>Check-in</h2></center>
+        <table class="table" style="border:0; margin:auto;">
+            <tr>
+                <td>
+                    <span>DNI: </span>
+                </td>
+                <td>
+                    <span><?php echo $dni; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Nom: </span>
+                </td>
+                <td>
+                    <span><?php echo $nom; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Cognoms: </span>
+                </td>
+                <td>
+                    <span><?php echo $cognoms; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Reserva: </span>
+                </td>
+                <td>
+                    <span><?php echo $id_reserva; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Nombre d'adults: </span>
+                </td>
+                <td>
+                    <span><?php echo $num_adults; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Nombre de nens: </span>
+                </td>
+                <td>
+                    <span><?php echo $num_nens; ?></span>
+                </td>
+            <tr>
+                <td>
+                    <span>Nombre d'habitacions: </span>
+                </td>
+                <td>
+                    <span><?php echo $num_habitacions;  ?></span>
+                </td>
+            </tr>
+                <?php
+                    foreach ($hab as $valor_hab) {
+                        echo "<tr><td>Habitacio nº: </td><td>$valor_hab->numero</td></tr>";
+                    }
+                ?>
+            <tr>
+                <td>
+                    <span>Data d'entrada: </span>
+                </td>
+                <td>
+                    <span><?php echo $data_entrada; ?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Data de sortida: </span>
+                </td>
+                <td>
+                    <span><?php echo $data_sortida; ?></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="span4"></div>
+</div>

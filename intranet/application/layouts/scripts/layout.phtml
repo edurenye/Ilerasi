@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<?php $namespace = new Zend_Session_Namespace ('user'); ?>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<title>Hotel Ilerasi</title>
+<meta name="description" content="L'hotel Ilerasi és un hotel situat a Andorra amb proximitat a les pistes d'esqui de Vallnord" />
+<meta name="keywords" content="hotel, ilerasi, andorra, vallnord, esqui, snow" />
+<meta name="author" content="Eduard Reñé Claramunt" />
+<!—[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]—>
+<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body { padding-top: 60px; }
+</style>
+<link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid" style="padding-left:5%;">
+                <a class="brand" href="/">Hotel Ilerasi</a>
+                <ul class="nav">
+                    <li <?php if ($_SERVER["REQUEST_URI"] == '/') { echo "class='active'";} ?>><a href="/">Dashboard</a></li>
+                    <li <?php if ($_SERVER["REQUEST_URI"] == '/checkin/index') { echo "class='active'";} ?>><a href="/checkin/index">Check-in</a></li>
+                    <li <?php if ($_SERVER["REQUEST_URI"] == '/checkout/index') { echo "class='active'";} ?>><a href="/checkout/index">Check-out</a></li>
+                    <li <?php if ($_SERVER["REQUEST_URI"] == '/factures/index') { echo "class='active'";} ?>><a href="/factures/index">Factures</a></li>
+                    <li <?php if ($_SERVER["REQUEST_URI"] == '/spa/index') { echo "class='active'";} ?>><a href="/spa/index">SPA</a></li>
+                    <li <?php if ($_SERVER["REQUEST_URI"] == '/restaurant/index') { echo "class='active'";} ?>><a href="/restaurant/index">Restaurant</a></li>
+                    <li <?php if ($_SERVER["REQUEST_URI"] == '/massatges/index') { echo "class='active'";} ?>><a href="/massatges/index">Massatges</a></li>
+                    <li <?php if ($_SERVER["REQUEST_URI"] == '/minibar/index') { echo "class='active'";} ?>><a href="/minibar/index">Minibar</a></li>
+                    <li <?php if ($_SERVER["REQUEST_URI"] == '/conferencies/index') { echo "class='active'";} ?>><a href="/conferencies/index">Conferencies</a></li>
+                    <li <?php if ($_SERVER["REQUEST_URI"] == '/treballadors/index') { echo "class='active'";} ?>><a href="/treballadors/index">Treballadors</a></li>
+                </ul>
+                <ul class="nav" style="float:right; padding-right:5%;">
+                    <li><?php echo $this->render('auth/header.phtml'); ?></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span12" style="text-align:center; width: 90%; padding-left:5%;">
+            <?php echo $this->layout()->content; ?>
+        </div>
+    </div>
+
+<footer>
+    <p style="text-align:center; padding-bottom:20px; padding-top:20px;">&copy; Ilerasi 2012</p>
+</footer>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.boto').css('display','none');
+    $('.canvi').click(function() {
+        element = $(this).attr('data-target');
+        $(element).removeClass('boto');
+        $('.boto').hide();
+        $(element).slideToggle();
+        $(element).addClass('boto');
+    });
+});
+</script>
+
+<script type="text/javascript">
+    var datefield=document.createElement("input")
+    datefield.setAttribute("type", "date")
+    if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
+        document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
+        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n')
+    }
+</script>
+
+<script>
+if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
+    jQuery(function($){ //on document.ready
+        $('#calendari').datepicker();
+    })
+}
+</script>
+
+</body>
+</html>

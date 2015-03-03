@@ -1,0 +1,15 @@
+<?php echo "<script type='text/javascript'> $(document).ready(function() { document.error-user.edit-user.value = $user; });</script>"; ?>
+<div class="alert alert-error">
+    <a class="close" data-dismiss="alert">x</a>
+    Autenticació incorrecta
+</div>
+<div class="row-fluid">
+<div class="span4">
+    <?php echo $this->render('auth/signin.phtml'); ?>
+</div>
+<div class="span8">
+    <div style="padding-left:20%;padding-right:30%;">
+        <?php echo $this->render('auth/registre.phtml'); ?>
+    </div>
+</div>
+</div>

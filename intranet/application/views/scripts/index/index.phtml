@@ -1,0 +1,21 @@
+<div class="row-fluid">
+    <div class="span4"></div>
+    <div class="span4">
+        <?php
+            echo "<br/><br/><h1>Ocupació actual:</h1><br/><br/>";
+
+            $table_res = new Application_Model_Reserva();
+            $select_res = $table_res->select();
+            $select_res->from('reserva', num_habitacions)
+                       ->where('data_entrada <= NOW()')
+                       ->where('data_sortida >= NOW()');
+            $row_res = $table_res->fetchAll($select_res);
+            $conta = 0;
+            foreach ($row_res as $value_res) {
+                $conta = $conta + $value_res->num_habitacions;
+            }
+            echo "<br/><br/><h1>" . $conta . " de 32</h1><br/><br/><br/><br/>"
+        ?>
+    </div>
+    <div class="span4"></div>
+</div>

@@ -1,0 +1,36 @@
+<div class="row-fluid">
+    <div class="span4"></div>
+    <div class="span4">
+        <center><h2>Reserves</h2></center>
+        <?php
+            $res = $this->res;
+            $conta = 0;
+            foreach ($res as $value_res) {
+                echo "<table class='table' style='border:0; margin:auto;'>
+                    <tbody>";
+                        echo "<tr><td>Data d'arribada: </td><td>";
+                        echo $value_res->data_entrada;
+                        echo "</td></tr>";
+                        echo "<tr><td>Data de sortida: </td><td>";
+                        echo $value_res->data_sortida;
+                        echo "</td></tr>";
+                        echo "<tr><td>Nombre d'adults: </td><td>";
+                        echo $value_res->num_adults;
+                        echo "</td></tr>";
+                        echo "<tr><td>Nombre de nens: </td><td>";
+                        echo $value_res->num_nens;
+                        echo "</td></tr>";
+                        echo "<tr><td>Nombre d'habitacions: </td><td>";
+                        echo $value_res->num_habitacions;
+                        echo "</td></tr>";
+                        echo "<tr><td>Preu: </td><td>";
+                        echo $value_res->preu;
+                        echo "</td></tr>
+                    </tbody>
+                </table><br/><br/>";
+            }
+        ?>
+            
+    </div>
+    <div class="span4"></div>
+</div>

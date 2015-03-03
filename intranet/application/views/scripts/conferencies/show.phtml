@@ -1,0 +1,57 @@
+<?php
+    $conferencies = $this->conferencies;
+?>
+<div class="row-fluid">
+    <div class="span4"></div>
+    <div class="span4">
+        <center><h2>conferencies</h2></center>
+        <?php
+            foreach ($conferencies as $value_con) {
+                echo "
+                    <table class='table' style='border:0; margin:auto;'>
+                        <tr>
+                            <td>
+                                <span>Ponent: </span>
+                            </td>
+                            <td>
+                                <span>$value_con->ponent</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Data: </span>
+                            </td>
+                            <td>
+                                <span>$value_con->data</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Durada: </span>
+                            </td>
+                            <td>
+                                <span>$value_con->durada</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Tema: </span>
+                            </td>
+                            <td>
+                                <span>$value_con->tema</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Responsable: </span>
+                            </td>
+                            <td>
+                                <span>$value_con->responsable</span>
+                            </td>
+                        </tr>
+                    </table>";
+            }
+        ?>
+    </div>
+    <div class="span4"></div>
+</div>

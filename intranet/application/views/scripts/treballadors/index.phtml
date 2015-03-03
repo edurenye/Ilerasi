@@ -1,0 +1,49 @@
+<div class="row-fluid">
+    <div class="span4"></div>
+    <div class="span4">
+        <center><h2>Treballadors</h2></center>
+        <form action="/treballadors/show" class="form" method="POST">
+            <table class="table" style="border:0; margin:auto;">
+                <tr>
+                    <div class="form-item">
+                        <td>
+                            <span>Nom: </span>
+                        </td>
+                        <td>
+                            <input type="text" maxlength="20" name="nom" id="nom" class="form-text required" required />
+                        </td>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="form-item">
+                        <td>
+                            <span>Cognoms: </span>
+                        </td>
+                        <td>
+                            <input type="text" maxlength="50" name="cognoms" id="cognoms" class="form-text required" required />
+                        </td>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="form-item">
+                        <td>
+                            <span>DNI: </span>
+                        </td>
+                        <td>
+                            <input type="text" maxlength="9" name="dni" id="dni" class="form-text required" required />
+                        </td>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="form-item">
+                        <td></td>
+                        <td>
+                            <button type="submit" class="btn submit">Mostra la informació del treballador</button>
+                        </td>
+                    </div>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="span4"></div>
+</div>
